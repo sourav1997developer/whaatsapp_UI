@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./chat.css" />
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- jquery CDN  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>WhatsApp</title>
+
+  </head>
+  <body id="complete_wide">
+    <div class="row" id="full_box">
+      <!-- Left side chat -->
+      <div class="col-md-12" id="box_section">
+        <!-- Chat details -->
+        <div class="left_side" id="chat_part">
+          <div class="bottom_sec">
+          <!-- Chat options -->
+            <div class="top_chat_sec">
+              <div>
+                <i class="fa-regular fa-comment"></i>
+                <span class="chat">Chats</span>
+              </div>
+            
+              <!-- Dropdown -->
+              <div class="dropdown">
+                <a class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-user-plus" data-bs-toggle="tooltip" data-bs-placement="top" title="Group Options"></i
+                    >
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Group</a></li>
+                  <li><a class="dropdown-item" href="#">Contacts</a></li>
+                  <li><a class="dropdown-item" href="#">Message</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Search box -->
+            <div class="search_box">
+              <input
+                type="search"
+                name=""
+                id="search"
+                placeholder="Search or start a new chat"
+              />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+        
+          <!-- Chat-Members Start -->
+          <div class="inbox_chat">
+            <!-- # -->
+            <!-- 1st -->
+            <div class="chat-profile" onclick="viewFunction()">
+              <div class="chat-details">
+                <img src="./images/av1.png" />
+                <div class="name-msg">
+                  <span class="chat-name">Sourav</span>
+                  <span class="chat-msg"
+                    >Ok, This is your test message. Namastay world</span
+                  >
+                </div>
+                <div class="time">02:00 PM <div class="msg_count">5</div></div>
+              </div>
+            </div>
+
+            <!-- 2nd -->
+            <div class="chat-profile">
+              <div class="chat-details">
+                <img src="./images/av2.png" />
+                <div class="name-msg">
+                  <span class="chat-name">Rakesh</span>
+                  <span class="chat-msg"
+                    >Hello, Mr. whats going on</span
+                  >
+                </div>
+                <span class="time">08:10 PM</span>
+              </div>
+            </div>
+
+            <!-- 3rd -->
+            <div class="chat-profile">
+              <div class="chat-details">
+                <img src="./images/av3.jpeg" />
+                <div class="name-msg">
+                  <span class="chat-name">Sachin</span>
+                  <span class="chat-msg"
+                    >Hi, what are you doing, and whats your next plan</span
+                  >
+                </div>
+                <span class="time">06:40 PM</span>
+              </div>
+            </div>
+
+             <!-- 4th -->
+             <div class="chat-profile">
+              <div class="chat-details">
+                <img src="./images/av4.png" />
+                <div class="name-msg">
+                  <span class="chat-name">Ram</span>
+                  <span class="chat-msg"
+                    >Hi, whats your next plan</span
+                  >
+                </div>
+                <span class="time">06:45 PM</span>
+              </div>
+            </div>
+
+              <!-- 5th -->
+              <div class="chat-profile">
+                <div class="chat-details">
+                  <img src="./images/av5.png" />
+                  <div class="name-msg">
+                    <span class="chat-name">Akshay</span>
+                    <span class="chat-msg"
+                      >Hi, Next sunday whats your next plan</span
+                    >
+                  </div>
+                  <span class="time">10:05 PM</span>
+                </div>
+              </div>
+            <!-- # -->
+          </div>
+          <!-- Chat-Members End-->
+        </div>
+        <!-- End left side details -->
+      
+        <!-- Right side Message chat -->
+        <div class="right_side" id="for_view">
+              <div class="show_message_pro">
+            <div id="profile_box">
+               <!-- For refresh -->
+               <a type="button" onClick="window.location.reload()" id="refresh">
+                <i class="fa-solid fa-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"
+                title="Back"></i>
+             </a>
+              <!-- For refresh -->
+              <div class="profile-pic">
+                <label class="-label" for="file">
+                  <span>Change Image</span>
+                </label>
+                <input id="file" type="file" onchange="loadFile(event)" />
+                <img
+                  src="./images/av1.png"
+                  id="output"
+                  width="200"
+                />
+              </div>
+              <div class="message_name">
+                Sourav
+                <span class="online">Online</span>
+              </div>
+            </div> 
+          </div>
+
+              <!-- Right side message area -->
+              <div class="chat_message_area">
+                  <div class="section_chat">
+                       <!-- message area -->
+                       <!-- incoming message -->
+                      <div class="incoming-message">
+                          <p>Hello how are you </p>
+                          <span class="chat_time">1:00 PM</span>
+                      </div>
+
+                      <div class="incoming-message">
+                          <p>Whats going on</p>
+                          <span class="chat_time">1:05 PM</span>
+                      </div>
+
+                      <div class="incoming-message">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        <span class="chat_time">1:05 PM</span>
+                    </div>
+
+                      <!-- sent message  -->
+                      <!-- Static messages -->
+                      <div class="msg_sections">
+                          <div class="send-message">
+                              <p>Hiii</p>
+                              <span class="chat_time">1:10 PM</span>
+                          </div>
+
+                          <div class="send-message">
+                              <p>All Okay</p>
+                              <span class="chat_time">1:11 PM</span>
+                          </div>
+
+                          <div class="send-message">
+                            <p>Prepare for Examinations</p>
+                            <span class="chat_time">1:12 PM</span>
+                          </div>
+
+                          <div class="send-message">
+                            <p>And collecting all type of Exam Material</p>
+                            <span class="chat_time">1:15 PM</span>
+                         </div>
+
+                        <div class="send-message">
+                          <p>This is dummy text</p>
+                          <span class="chat_time">2:00 PM</span>
+                        </div>
+
+
+                        <div class="send-message">
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                          <span class="chat_time">2:15 PM</span>
+                        </div>
+
+                      <div class="send-message">
+                        <p>This is only for testing purpose</p>
+                        <span class="chat_time">2:15 PM</span>
+                      </div>
+
+                      </div>
+                       <!-- message area  -->
+                  </div>
+              </div>
+
+               <!-- message written box start  -->
+               <div class="msg-written-box">
+                <!-- smile emoji icon  -->
+               <div class="chat_emojis">
+                <i class="fa-regular fa-face-smile" data-bs-toggle="tooltip" data-bs-placement="top" title="Emoji"></i>
+               </div>
+
+                <!-- file upload icon -->
+               <div class="image-upload">
+                   <label for="file-input">
+                       <span id="fileclip">
+                        <i class="fa-sharp fa-solid fa-paperclip" data-bs-toggle="tooltip" data-bs-placement="top" title="Upload File" id="paperclip"></i>
+                       </span>
+                   </label>
+                   <input id="file-input" type="file" />
+               </div>
+
+               <!-- input box for chat  -->
+               <div class="row col-md-9 chat_text_box" style="margin: 0 7px;">
+                   <input type="text" name="" id="input-chat-box"
+                       placeholder="Type a message">
+               </div>
+
+               <!-- Send icon  -->
+               <div class="chat-send">
+                   <i class="fa-solid fa-paper-plane"></i>
+               </div>
+           </div>
+           <!-- message written box end  -->
+      </div>
+    </div>
+
+
+<!-- Modal For Group -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="font-size: 1.4rem;">Add Group
+          Participants</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Search bar -->
+      <div class="new_gp_name">
+        <h5 style="font-size: 1.2rem;">New group name</h5>
+        <input type="text" name="" id="group_name" placeholder="Group subject">
+    </div>
+
+    <!-- create group name -->
+      <div id="search2">
+        <input type="search" class="" placeholder="Type contact name"
+            id="contact_name_search2">
+    </div>
+     <!-- label -->
+    <h6 style="margin: 10px 24px; padding-left: 7px;">All Contacts
+    </h6>
+      <div class="modal-body" style="height: 45vh; overflow-y: auto;">
+       
+          <!-- select contacts -->
+          <div class="chat-profile2">
+            <div class="chat-details">
+                <img src="./images/av1.png">
+                <div class="name-msg">
+                    <span class="chat-name">Sourav</span>
+                    <span class="chat-msg"></span>
+                </div>
+                <span class="select-checkbox">
+                    <input type="checkbox" name="" id="" class="checkboxx">
+                </span>
+            </div>
+        </div>
+
+        <div class="chat-profile2">
+          <div class="chat-details">
+              <img src="./images/av2.png">
+              <div class="name-msg">
+                  <span class="chat-name">Rakesh</span>
+                  <span class="chat-msg"></span>
+              </div>
+              <span class="select-checkbox">
+                  <input type="checkbox" name="" id="" class="checkboxx">
+              </span>
+          </div>
+      </div>
+
+      <div class="chat-profile2">
+        <div class="chat-details">
+            <img src="./images/av3.jpeg">
+            <div class="name-msg">
+                <span class="chat-name">Sachin</span>
+                <span class="chat-msg"></span>
+            </div>
+            <span class="select-checkbox">
+                <input type="checkbox" name="" id="" class="checkboxx">
+            </span>
+        </div>
+    </div>
+
+    <div class="chat-profile2">
+      <div class="chat-details">
+          <img src="./images/av4.png">
+          <div class="name-msg">
+              <span class="chat-name">Ram</span>
+              <span class="chat-msg"></span>
+          </div>
+          <span class="select-checkbox">
+              <input type="checkbox" name="" id="" class="checkboxx">
+          </span>
+      </div>
+  </div>
+
+  <div class="chat-profile2">
+    <div class="chat-details">
+        <img src="./images/av5.png">
+        <div class="name-msg">
+            <span class="chat-name">Akshay</span>
+            <span class="chat-msg"></span>
+        </div>
+        <span class="select-checkbox">
+            <input type="checkbox" name="" id="" class="checkboxx">
+        </span>
+    </div>
+  </div>
+
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: center;">
+        <a href="#" id="create_button" data-bs-toggle="tooltip" data-bs-placement="top"
+        title="Create group"><i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+        
+    <!-- Bootstrap js  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap Tooltip js  -->
+    <script>
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+       });
+    </script>
+
+    <script>
+      function viewFunction() {
+        var x = document.getElementById("for_view");
+        var y = document.getElementById("chat_part")
+        // var z = document.getElementById("complete_wide")
+        let query = window.matchMedia("(max-width: 700px)"); 
+       
+        query.addEventListener('change', (e) =>{
+        if (x.style.display == "") {
+          x.style.display = "block";
+          
+          x.style.width = "100%";
+          // y.style.display = "none"
+          x.style.display = "block";
+        } else {
+          x.style.display = "block";
+        }
+      })
+
+      }
+      
+      
+      
+    </script>
+    <script src="./chat.js"></script>
+  </body>
+</html>
